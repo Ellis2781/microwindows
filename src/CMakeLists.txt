@@ -21,3 +21,7 @@ add_library(mwin STATIC IMPORTED)
 set_target_properties(nano-X PROPERTIES IMPORTED_LOCATION ${PROJECT_BINARY_DIR}/src/microwindows/src/lib/libnano-X.a)
 set_target_properties(mwimages PROPERTIES IMPORTED_LOCATION ${PROJECT_BINARY_DIR}/src/microwindows/src/lib/libmwimages.a)
 set_target_properties(mwin PROPERTIES IMPORTED_LOCATION ${PROJECT_BINARY_DIR}/src/microwindows/src/lib/libmwin.a)
+
+target_link_libraries(nano-X INTERFACE muslc)
+target_link_libraries(mwimages INTERFACE muslc)
+target_link_libraries(mwin INTERFACE muslc) 
