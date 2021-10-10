@@ -2,6 +2,7 @@
 # config - Microwindows and Nano-X configuration file
 #
 # Set target architecture using ARCH= from options in Arch.rules
+# Set drawing method: X11 or FRAMEBUFFER/MOUSE/KEYBOARD options
 # Set SCREEN/MOUSE/KEYBOARD drivers (typically X11 or FB)
 # Set various libraries to build or include and their locations
 #
@@ -14,15 +15,15 @@
 # Target platform and compilation options
 #
 ####################################################################
-ARCH                     = MACOSX
-SHAREDLIBS               = Y
-SHAREDLINK               = Y
+ARCH                     = LINUX-NATIVE
+SHAREDLIBS               = N
+SHAREDLINK               = N
 #EXTRAFLAGS               = -Wall -Wno-missing-prototypes
 DEBUG                    = N
 OPTIMIZE                 = Y
 #OPTIMIZE                 = -O1
 VERBOSE                  = N
-THREADSAFE               = Y
+THREADSAFE               = N
 PARALLEL                 = N
 
 ####################################################################
@@ -30,14 +31,13 @@ PARALLEL                 = N
 # Set SCREEN=X11 for X11, SCREEN=FB for framebuffer drawing
 # Screen size/depth for X11, FBE and non-dynamic framebuffer systems
 ####################################################################
-SCREEN                   = X11
-MOUSE                    =
-KEYBOARD                 =
+SCREEN                   = FB
+MOUSE                    = DEVMICEMOUSE
+KEYBOARD                 = SCANKBD
 SCREEN_WIDTH             = 1024
 SCREEN_HEIGHT            = 768
-X11LIBLOCATION           = /usr/X11/lib
-X11HDRLOCATION           = /usr/X11/include
-EXTENGINELIBS            +=
+#X11LIBLOCATION           = /usr/X11/lib
+#X11HDRLOCATION           = /usr/X11/include
 
 ####################################################################
 #
@@ -47,18 +47,18 @@ EXTENGINELIBS            +=
 MICROWIN                 = Y
 NANOX                    = Y
 NUKLEARUI                = Y
-NX11                     = Y
+NX11                     = N
 ENGINE                   = N
-TINYWIDGETS              = Y
+TINYWIDGETS              = N
 
 ####################################################################
 #
 # Applications and demos to build
 #
 ####################################################################
-FBEMULATOR               = Y
+FBEMULATOR               = N
 MICROWINDEMO             = Y
-MICROWINMULTIAPP         = Y
+MICROWINMULTIAPP         = N
 NANOXDEMO                = Y
 HAVE_VNCSERVER_SUPPORT   = N
 VNCSERVER_PTHREADED      = N
@@ -129,8 +129,8 @@ PCF_FONT_DIR             = "fonts/pcf"
 ####################################################################
 HAVE_FREETYPE_2_SUPPORT  = Y
 HAVE_HARFBUZZ_SUPPORT    = N
-INCFT2LIB                = /usr/local/include
-LIBFT2LIB                = -lfreetype -lbz2
+INCFT2LIB                = /usr/include
+LIBFT2LIB                = -lfreetype
 #LIBFT2LIB                += -lharfbuzz
 FREETYPE_FONT_DIR        = "fonts/truetype"
 
@@ -198,10 +198,10 @@ NOCLIPPING               = N
 # set GRAYPALETTE to link with Gray Palette (valid only for 4bpp modes)
 # set HAVETEXTMODE=Y for systems that can switch between text & graphics.
 USE_EXPOSURE             = Y
-VTSWITCH                 = N
+VTSWITCH                 = Y
 FBREVERSE                = N
 GRAYPALETTE              = N
-HAVETEXTMODE             = N
+HAVETEXTMODE             = Y
 
 ####################################################################
 # Screen pixel format
@@ -229,7 +229,6 @@ HAVETEXTMODE             = N
 SCREEN_PIXTYPE           = MWPF_TRUECOLORARGB
 #SCREEN_PIXTYPE           = MWPF_TRUECOLORABGR
 #SCREEN_PIXTYPE           = MWPF_TRUECOLOR565
-#SCREEN_PIXTYPE           = MWPF_PALETTE
 SCREEN_DEPTH             = 8
 
 ####################################################################
