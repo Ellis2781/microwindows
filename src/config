@@ -57,9 +57,9 @@ TINYWIDGETS              = N
 #
 ####################################################################
 FBEMULATOR               = N
-MICROWINDEMO             = Y
+MICROWINDEMO             = N
 MICROWINMULTIAPP         = N
-NANOXDEMO                = Y
+NANOXDEMO                = N
 HAVE_VNCSERVER_SUPPORT   = N
 VNCSERVER_PTHREADED      = N
 LIBVNC                   = -lvncserver
