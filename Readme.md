@@ -1,5 +1,7 @@
 # Microwindows or the Nano-X Window System
 
+Current status: experimental
+
 Microwindows or Nano-X is a small graphical windowing system that implements
 both Win32 and Nano-X (X11-like) APIs for clipped graphics drawing in windows
 on Linux, Mac OS X, EMSCRIPTEN, Android and other platforms. It is
